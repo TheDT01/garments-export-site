@@ -1,37 +1,55 @@
-document.addEventListener("DOMContentLoaded", async () => {
-  // Inject header/footer
-  await loadPartial("#site-header", `${ROOT}/partials/header.html`);
-  await loadPartial("#site-footer", `${ROOT}/partials/footer.html`);
+/**
+ * Global JS for lightweight interactions
+ * - Icon rendering (Lucide)
+ * - FAQ accordion
+ * - Simple form handling for Configurator and Contact (no backend; shows a summary)
+ * - Lazy-loading placeholders
+ */
 
-  // Footer year
-  const y = $("#year");
-  if (y) y.textContent = new Date().getFullYear();
+document.addEventListener('DOMContentLoaded', () => {
+  // Render Lucide icons
+  if (window.lucide) { window.lucide.createIcons(); }
 
-  // Mark active nav based on page
-  const page = location.pathname.split("/").pop().replace(".html", "");
-  $$("[data-nav]").forEach((a) => {
-    if (page.includes(a.dataset.nav)) a.classList.add("active");
+  // Accordion
+  document.querySelectorAll('.accordion-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const open = item.classList.toggle('open');
+      item.querySelector('.answer').style.display = open ? 'block' : 'none';
+    });
   });
 
-  // Newsletter fake submit
-  const ns = $("#newsletterForm");
-  if (ns) {
-    ns.addEventListener("submit", (e) => {
+  // Configurator demo handler
+  const cfg = document.getElementById('configForm');
+  const result = document.getElementById('configResult');
+  if (cfg && result) {
+    cfg.addEventListener('submit', (e) => {
       e.preventDefault();
-      showToast("Subscribed! (prototype)");
+      const data = Object.fromEntries(new FormData(cfg).entries());
+      // Basic validation
+      if (!data.type || !data.fabric || !data.qty || !data.country) {
+        alert('Please fill all required fields.');
+        return;
+      }
+      result.style.display = 'block';
+      result.innerHTML = `
+        <h3>Configuration Summary</h3>
+        <pre style="white-space:pre-wrap;background:#F8FAFC;padding:1rem;border-radius:12px;">${JSON.stringify(data, null, 2)}</pre>
+        <p><em>This is a static demo. Connect this form to your preferred backend or CRM.</em></p>
+      `;
+      cfg.reset();
+      window.scrollTo({ top: result.offsetTop - 80, behavior: 'smooth' });
+    });
+  }
+
+  // Contact form demo
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(contactForm).entries());
+      alert(`Thanks ${data.name}, we'll get back to you at ${data.email}. (Demo submission)`);
+      contactForm.reset();
     });
   }
 });
-
-window.showToast = (msg) => {
-  let t = $("#toast");
-  if (!t) {
-    t = document.createElement("div");
-    t.id = "toast";
-    t.className = "toast";
-    document.body.appendChild(t);
-  }
-  t.textContent = msg;
-  t.classList.add("show");
-  setTimeout(() => t.classList.remove("show"), 1800);
-};

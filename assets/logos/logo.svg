@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="180" height="40" viewBox="0 0 180 40" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DT Royal Apparel Exports logo">
+  <rect width="180" height="40" fill="white"/>
+  <g>
+    <rect x="6" y="8" width="24" height="24" rx="6" fill="#1B5E20"/>
+    <path d="M14 26 L18 14 L22 26 Z" fill="white"/>
+  </g>
+  <text x="40" y="26" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700" fill="#0E1116">DT Royal Apparel Exports</text>
+</svg>

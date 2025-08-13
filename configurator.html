@@ -10,11 +10,11 @@
   -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Page Not Found — DT Royal Apparel Exports</title>
-  <meta name="description" content="The page you requested does not exist." />
+  <title>Product Configurator — DT Royal Apparel Exports</title>
+  <meta name="description" content="Quickly specify your garment requirements and receive a tailored quote." />
   <link rel="canonical" href="https://example.com/" />
-  <meta property="og:title" content="Page Not Found" />
-  <meta property="og:description" content="The page you requested does not exist." />
+  <meta property="og:title" content="Product Configurator" />
+  <meta property="og:description" content="Quickly specify your garment requirements and receive a tailored quote." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/images/ui/placeholder-16x9.svg" />
   <meta name="theme-color" content="#1B5E20" />
@@ -52,8 +52,30 @@
 </header>
 
 <main class="container section">
-  <h1>404 — Page Not Found</h1>
-  <p>Try returning to the <a href="index.html">homepage</a>.</p>
+  <nav class="breadcrumbs"><a href="index.html">Home</a> / Configurator</nav>
+  <h1>Product Configurator</h1>
+  <p style="color:var(--color-muted)">Submit your basic specs. We'll follow up with a precise quotation.</p>
+  <form id="configForm" class="card" aria-describedby="configHelp">
+    <!-- Each field is labeled and accessible. JS will handle validation. -->
+    <label>Product Type<select name="type" required>
+      <option value="">Select</option>
+      <option>T-Shirt</option>
+      <option>Hoodie</option>
+      <option>Jeans</option>
+      <option>Jacket</option>
+    </select></label>
+    <label>Fabric (GSM / blend)<input name="fabric" placeholder="e.g., 220 GSM, 100% cotton" required/></label>
+    <label>Quantity<input type="number" name="qty" min="100" step="50" required/></label>
+    <label>Target Unit Price (USD)<input type="number" name="price" min="1" step="0.01"/></label>
+    <label>Destination Country<input name="country" placeholder="e.g., Germany" required/></label>
+    <label>Notes<textarea name="notes" rows="4" placeholder="Any trims, packaging, wash, branding details..."></textarea></label>
+    <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.5rem;">
+      <button class="btn primary" type="submit"><i data-lucide="send"></i> Submit</button>
+      <button class="btn" type="reset"><i data-lucide="rotate-ccw"></i> Reset</button>
+    </div>
+    <small id="configHelp" style="color:var(--color-muted)">All fields are validated and never stored on this static site. Hook to your backend later.</small>
+  </form>
+  <div id="configResult" class="card" style="display:none;margin-top:1rem;"></div>
 </main>
 
 <footer class="footer">

@@ -1,9 +1,0 @@
-[
-  { "name": "Rahman Khan", "role": "CEO & Founder", "photo": "ceo.jpg" },
-  {
-    "name": "Lamia Noor",
-    "role": "Head of Merchandising",
-    "photo": "merchandiser.jpg"
-  },
-  { "name": "Imran Hossain", "role": "QA Lead", "photo": "qa-lead.jpg" }
-]

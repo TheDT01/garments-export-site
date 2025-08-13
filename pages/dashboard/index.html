@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dashboard — Garments Export</title>
+    <link rel="stylesheet" href="../../css/base.css" />
+    <link rel="stylesheet" href="../../css/layout.css" />
+    <link rel="stylesheet" href="../../css/components.css" />
+  </head>
+  <body>
+    <header id="site-header" class="site-header"></header>
+    <main class="section">
+      <div class="container">
+        <h1>Welcome back</h1>
+        <div class="grid space-top" style="grid-template-columns: 1fr 1fr 1fr">
+          <a class="card pad" href="./orders.html">Orders</a>
+          <a class="card pad" href="./designs.html">Saved Designs</a>
+          <a class="card pad" href="./profile.html">Profile</a>
+        </div>
+      </div>
+    </main>
+    <footer id="site-footer" class="site-footer"></footer>
+    <script src="../../js/dom.js"></script>
+    <script src="../../js/i18n.js"></script>
+    <script src="../../js/app.js"></script>
+    <script>
+      if (!STATE?.isLogged()) location.href = "../auth/login.html";
+    </script>
+    <script src="../../js/ui/footer.js"></script>
+    <script src="../../js/ui/cookie-consent.js"></script>
+  </body>
+</html>

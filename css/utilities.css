@@ -1,0 +1,15 @@
+.maxw {
+  max-width: var(--maxw);
+}
+.round {
+  border-radius: var(--radius);
+}
+.soft {
+  background: var(--soft);
+}
+.line {
+  border: 1px solid var(--line);
+}
+.pad {
+  padding: 1rem;
+}

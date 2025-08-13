@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Importers Directory — Garments Export</title>
+    <meta
+      name="description"
+      content="Search and filter apparel importers by country, category, and MOQ."
+    />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/theme-light.css" />
+    <link rel="stylesheet" href="../css/animations.css" />
+    <link rel="stylesheet" href="../css/utilities.css" />
+    <link rel="stylesheet" href="../css/print.css" />
+  </head>
+  <body>
+    <header id="site-header" class="site-header"></header>
+
+    <main>
+      <section class="section">
+        <div class="container">
+          <h1>Importers Directory</h1>
+          <p class="muted">
+            Find the right partners by country, product category, MOQ, and more.
+          </p>
+
+          <div id="filtersWrap" class="card pad space-top"></div>
+
+          <div
+            class="space-top grid"
+            id="importersGrid"
+            style="
+              grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+              gap: 1rem;
+            "
+          ></div>
+
+          <div class="space-top center">
+            <div id="pager"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="site-footer" class="site-footer"></footer>
+
+    <script src="../js/vendors/dayjs.min.js"></script>
+    <script src="../js/vendors/papaparse.min.js"></script>
+    <script type="module" src="../js/pages/importers.js"></script>
+    <script src="../js/dom.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/ui/footer.js"></script>
+    <script src="../js/ui/cookie-consent.js"></script>
+  </body>
+</html>

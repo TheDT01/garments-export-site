@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Register — Garments Export</title>
+    <link rel="stylesheet" href="../../css/base.css" />
+    <link rel="stylesheet" href="../../css/layout.css" />
+    <link rel="stylesheet" href="../../css/components.css" />
+  </head>
+  <body>
+    <header id="site-header" class="site-header"></header>
+    <main class="section">
+      <div class="container card pad" style="max-width: 520px">
+        <h1>Create account</h1>
+        <form
+          id="regForm"
+          class="grid"
+          style="grid-template-columns: 1fr; gap: 0.75rem"
+        >
+          <input class="input" name="name" placeholder="Full name" required />
+          <input
+            class="input"
+            name="email"
+            type="email"
+            placeholder="Email"
+            required
+          />
+          <input
+            class="input"
+            name="password"
+            type="password"
+            placeholder="Password"
+            required
+          />
+          <button class="btn primary">Register</button>
+        </form>
+      </div>
+    </main>
+    <footer id="site-footer" class="site-footer"></footer>
+    <script src="../../js/dom.js"></script>
+    <script src="../../js/i18n.js"></script>
+    <script src="../../js/app.js"></script>
+    <script>
+      document.getElementById("regForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        localStorage.setItem(
+          "demo-user",
+          JSON.stringify({ email: "demo@user.com" })
+        );
+        showToast("Account created (prototype)");
+        location.href = "../../pages/dashboard/index.html";
+      });
+    </script>
+    <script src="../../js/ui/footer.js"></script>
+    <script src="../../js/ui/cookie-consent.js"></script>
+  </body>
+</html>

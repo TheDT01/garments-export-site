@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Profile — Dashboard</title>
+    <link rel="stylesheet" href="../../css/base.css" />
+    <link rel="stylesheet" href="../../css/layout.css" />
+    <link rel="stylesheet" href="../../css/components.css" />
+  </head>
+  <body>
+    <header id="site-header" class="site-header"></header>
+    <main class="section">
+      <div class="container card pad" style="max-width: 680px">
+        <h1>Profile</h1>
+        <form class="grid" style="grid-template-columns: 1fr 1fr; gap: 0.75rem">
+          <input class="input" placeholder="Name" />
+          <input class="input" placeholder="Company" />
+          <input class="input" type="email" placeholder="Email" />
+          <select class="select">
+            <option>Buyer</option>
+            <option>Brand</option>
+          </select>
+          <button
+            class="btn primary"
+            type="button"
+            style="grid-column: 1/-1"
+            onclick="showToast('Saved (prototype)')"
+          >
+            Save
+          </button>
+          <button
+            class="btn ghost"
+            type="button"
+            style="grid-column: 1/-1"
+            onclick="localStorage.removeItem('demo-user'); location.href='../auth/login.html'"
+          >
+            Log out
+          </button>
+        </form>
+      </div>
+    </main>
+    <footer id="site-footer" class="site-footer"></footer>
+    <script src="../../js/dom.js"></script>
+    <script src="../../js/i18n.js"></script>
+    <script src="../../js/app.js"></script>
+    <script>
+      if (!STATE?.isLogged()) location.href = "../auth/login.html";
+    </script>
+    <script src="../../js/ui/footer.js"></script>
+    <script src="../../js/ui/cookie-consent.js"></script>
+  </body>
+</html>

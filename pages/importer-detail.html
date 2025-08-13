@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Importer Profile — Garments Export</title>
+    <meta
+      name="description"
+      content="Detailed importer profile with requirements and contacts."
+    />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/theme-light.css" />
+    <link rel="stylesheet" href="../css/animations.css" />
+    <link rel="stylesheet" href="../css/utilities.css" />
+    <link rel="stylesheet" href="../css/print.css" />
+  </head>
+  <body>
+    <header id="site-header" class="site-header"></header>
+
+    <main class="section">
+      <div class="container" id="profileWrap"></div>
+
+      <section class="section">
+        <div class="container card pad">
+          <h3>Interested? Send sample/quote request</h3>
+          <form
+            id="contact"
+            class="grid"
+            style="grid-template-columns: 1fr 1fr; gap: 0.75rem"
+          >
+            <input class="input" name="name" placeholder="Your name" />
+            <input class="input" name="email" placeholder="Your email" />
+            <input
+              class="input"
+              name="qty"
+              placeholder="Quantity (e.g., 1,000)"
+            />
+            <textarea
+              class="textarea"
+              name="message"
+              placeholder="Brief requirement"
+              style="grid-column: 1/-1"
+            ></textarea>
+            <div style="grid-column: 1/-1" class="flex">
+              <button class="btn primary" type="submit">Submit Request</button>
+              <a class="btn ghost" href="../pages/configurator.html"
+                >Design & Estimate FOB</a
+              >
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer id="site-footer" class="site-footer"></footer>
+
+    <script src="../js/dom.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/ui/footer.js"></script>
+    <script src="../js/ui/cookie-consent.js"></script>
+    <script type="module" src="../js/pages/importer-detail.js"></script>
+  </body>
+</html>

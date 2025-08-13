@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin • Content</title>
+    <link rel="stylesheet" href="../../css/base.css" />
+    <link rel="stylesheet" href="../../css/layout.css" />
+    <link rel="stylesheet" href="../../css/components.css" />
+  </head>
+  <body>
+    <header id="site-header" class="site-header"></header>
+    <main class="section">
+      <div
+        class="container grid"
+        style="grid-template-columns: 1fr 1fr; gap: 1rem"
+      >
+        <section class="card pad">
+          <h3>Blog Editor</h3>
+          <input class="input" placeholder="Title" />
+          <textarea class="textarea" placeholder="Content" rows="8"></textarea>
+          <button
+            class="btn primary space-top"
+            type="button"
+            onclick="showToast('Save disabled in prototype')"
+          >
+            Save
+          </button>
+        </section>
+        <aside class="card pad">
+          <h3>Pages</h3>
+          <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+          </ul>
+        </aside>
+      </div>
+    </main>
+    <footer id="site-footer" class="site-footer"></footer>
+    <script src="../../js/dom.js"></script>
+    <script src="../../js/app.js"></script>
+    <script src="../../js/ui/footer.js"></script>
+    <script src="../../js/ui/cookie-consent.js"></script>
+  </body>
+</html>

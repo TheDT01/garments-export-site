@@ -1,0 +1,19 @@
+<form
+  id="visitForm"
+  class="grid"
+  style="grid-template-columns: 1fr 1fr; gap: 0.75rem"
+>
+  <input class="input" name="name" placeholder="Visitor name" required />
+  <input class="input" name="email" type="email" placeholder="Email" required />
+  <input class="input" name="date" type="date" required />
+  <input class="input" name="people" type="number" min="1" value="1" />
+  <textarea
+    class="textarea"
+    name="notes"
+    placeholder="Notes (optional)"
+    style="grid-column: 1/-1"
+  ></textarea>
+  <button class="btn primary" type="submit" style="grid-column: 1/-1">
+    Book Visit
+  </button>
+</form>

@@ -1,0 +1,4 @@
+/* Keeps light theme tokens centralized (ready for dark later) */
+:root {
+  color-scheme: light;
+}

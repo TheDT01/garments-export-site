@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Checkout — Garments Export</title>
+    <link rel="stylesheet" href="../../css/base.css" />
+    <link rel="stylesheet" href="../../css/layout.css" />
+    <link rel="stylesheet" href="../../css/components.css" />
+  </head>
+  <body>
+    <header id="site-header" class="site-header"></header>
+    <main class="section">
+      <div class="container grid" style="grid-template-columns: 1.1fr 0.9fr">
+        <section class="card pad">
+          <h1>Checkout (prototype)</h1>
+          <p class="muted">Choose a payment method to simulate a flow.</p>
+          <div class="grid" style="grid-template-columns: 1fr 1fr">
+            <button
+              class="btn primary"
+              onclick="location.href='./success.html'"
+            >
+              Pay with Stripe
+            </button>
+            <button class="btn ghost" onclick="location.href='./success.html'">
+              Pay with PayPal
+            </button>
+          </div>
+        </section>
+        <aside class="card pad">
+          <h3>Order Summary</h3>
+          <p class="muted">Generated from configurator (mock)</p>
+          <p>Item: Hoodie • Qty: 1,000 • Est FOB: $8,900</p>
+        </aside>
+      </div>
+    </main>
+    <footer id="site-footer" class="site-footer"></footer>
+    <script src="../../js/dom.js"></script>
+    <script src="../../js/app.js"></script>
+    <script src="../../js/ui/footer.js"></script>
+    <script src="../../js/ui/cookie-consent.js"></script>
+  </body>
+</html>

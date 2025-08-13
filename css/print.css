@@ -1,0 +1,14 @@
+@media print {
+  .site-header,
+  .site-footer,
+  .carousel,
+  .btn {
+    display: none !important;
+  }
+  .container {
+    width: 100%;
+  }
+  body {
+    color: #000;
+  }
+}

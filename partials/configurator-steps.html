@@ -1,0 +1,170 @@
+<section id="cfg" class="card pad">
+  <ol
+    id="cfgSteps"
+    class="flex"
+    style="flex-wrap: wrap; gap: 0.5rem; margin: 0 0 1rem"
+  >
+    <li class="badge" data-step="type">1. Garment</li>
+    <li class="badge" data-step="fabric">2. Fabric</li>
+    <li class="badge" data-step="color">3. Color</li>
+    <li class="badge" data-step="sizes">4. Sizes</li>
+    <li class="badge" data-step="branding">5. Branding</li>
+    <li class="badge" data-step="quantity">6. Quantity</li>
+    <li class="badge" data-step="review">7. Review</li>
+  </ol>
+
+  <div class="grid" style="grid-template-columns: 1.1fr 0.9fr">
+    <div id="cfgForm" class="grid" style="gap: 0.75rem">
+      <!-- step panels -->
+      <div class="step" data-step="type">
+        <h3>Choose garment</h3>
+        <div
+          class="grid"
+          style="grid-template-columns: repeat(auto-fill, minmax(140px, 1fr))"
+        >
+          <label class="card pad"
+            ><input type="radio" name="type" value="tshirt" checked />
+            T-Shirt</label
+          >
+          <label class="card pad"
+            ><input type="radio" name="type" value="hoodie" /> Hoodie</label
+          >
+          <label class="card pad"
+            ><input type="radio" name="type" value="polo" /> Polo</label
+          >
+          <label class="card pad"
+            ><input type="radio" name="type" value="denim" /> Denim</label
+          >
+          <label class="card pad"
+            ><input type="radio" name="type" value="jacket" /> Jacket</label
+          >
+        </div>
+        <button class="btn primary space-top" data-next>Next</button>
+      </div>
+
+      <div class="step hidden" data-step="fabric">
+        <h3>Fabric & GSM</h3>
+        <div class="grid" style="grid-template-columns: 1fr 1fr">
+          <select class="select" name="fabric">
+            <option value="cotton">100% Cotton</option>
+            <option value="cotton-poly">Cotton/Poly</option>
+            <option value="poly">100% Polyester</option>
+            <option value="denim">Denim</option>
+            <option value="fleece">Fleece</option>
+          </select>
+          <select class="select" name="gsm">
+            <option value="140">140 GSM</option>
+            <option value="160" selected>160 GSM</option>
+            <option value="180">180 GSM</option>
+            <option value="220">220 GSM</option>
+          </select>
+        </div>
+        <button class="btn ghost space-top" data-prev>Back</button>
+        <button class="btn primary space-top" data-next>Next</button>
+      </div>
+
+      <div class="step hidden" data-step="color">
+        <h3>Colors</h3>
+        <input
+          class="input"
+          name="color"
+          type="text"
+          placeholder="e.g., Black (Pantone 6C)"
+        />
+        <button class="btn ghost space-top" data-prev>Back</button>
+        <button class="btn primary space-top" data-next>Next</button>
+      </div>
+
+      <div class="step hidden" data-step="sizes">
+        <h3>Sizes</h3>
+        <div class="grid" style="grid-template-columns: repeat(6, 1fr)">
+          <label><input type="checkbox" name="sizes" value="XS" /> XS</label>
+          <label
+            ><input type="checkbox" name="sizes" value="S" checked /> S</label
+          >
+          <label
+            ><input type="checkbox" name="sizes" value="M" checked /> M</label
+          >
+          <label
+            ><input type="checkbox" name="sizes" value="L" checked /> L</label
+          >
+          <label><input type="checkbox" name="sizes" value="XL" /> XL</label>
+          <label><input type="checkbox" name="sizes" value="XXL" /> XXL</label>
+        </div>
+        <a
+          class="btn ghost space-top"
+          href="../assets/pdf/product-catalog-ss24.pdf"
+          target="_blank"
+          >View size charts</a
+        >
+        <button class="btn ghost space-top" data-prev>Back</button>
+        <button class="btn primary space-top" data-next>Next</button>
+      </div>
+
+      <div class="step hidden" data-step="branding">
+        <h3>Branding</h3>
+        <div class="grid" style="grid-template-columns: 1fr 1fr">
+          <select class="select" name="print">
+            <option value="none">No print</option>
+            <option value="screen">Screen Print (1–4 col)</option>
+            <option value="dtf">DTF Transfer</option>
+            <option value="emb">Embroidery</option>
+          </select>
+          <div>
+            <label class="muted">Upload logo (PNG/SVG)</label>
+            <input type="file" id="logoFile" accept=".png,.svg" />
+          </div>
+        </div>
+        <button class="btn ghost space-top" data-prev>Back</button>
+        <button class="btn primary space-top" data-next>Next</button>
+      </div>
+
+      <div class="step hidden" data-step="quantity">
+        <h3>Quantity</h3>
+        <div class="grid" style="grid-template-columns: 1fr 1fr">
+          <select class="select" name="orderType">
+            <option value="sample">Sample</option>
+            <option value="bulk" selected>Bulk</option>
+          </select>
+          <input class="input" name="qty" type="number" min="50" value="1000" />
+        </div>
+        <button class="btn ghost space-top" data-prev>Back</button>
+        <button class="btn primary space-top" data-next>Next</button>
+      </div>
+
+      <div class="step hidden" data-step="review">
+        <h3>Review & Estimate</h3>
+        <div id="estimateBox" class="soft line pad round" aria-live="polite">
+          Loading…
+        </div>
+        <div class="flex space-top">
+          <a class="btn primary" id="saveDesign" href="../pages/auth/login.html"
+            >Save (login)</a
+          >
+          <a class="btn ghost" href="../pages/payments/checkout.html"
+            >Submit Order</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <aside class="card pad">
+      <h3>Live preview</h3>
+      <div
+        id="preview"
+        class="center"
+        style="min-height: 220px; background: var(--soft); border-radius: 12px"
+      >
+        <img
+          id="previewImg"
+          alt="Preview"
+          class="round"
+          style="max-height: 200px"
+        />
+      </div>
+      <p class="muted" style="margin: 0.75rem 0 0">
+        FOB estimate excludes freight & duties (prototype).
+      </p>
+    </aside>
+  </div>
+</section>

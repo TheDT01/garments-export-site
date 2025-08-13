@@ -1,0 +1,24 @@
+{
+  "base": {
+    "tshirt": 1.6,
+    "hoodie": 5.0,
+    "polo": 2.2,
+    "denim": 7.5,
+    "jacket": 9.0
+  },
+  "fabric": {
+    "cotton": 0.2,
+    "cotton-poly": 0.25,
+    "poly": 0.15,
+    "denim": 1.8,
+    "fleece": 1.2
+  },
+  "gsmMultipliers": { "140": 0.95, "160": 1.0, "180": 1.08, "220": 1.18 },
+  "branding": { "none": 0, "screen": 0.35, "dtf": 0.45, "emb": 0.8 },
+  "qtyBreaks": [
+    { "min": 50, "mult": 1.25 },
+    { "min": 200, "mult": 1.1 },
+    { "min": 1000, "mult": 1.0 },
+    { "min": 5000, "mult": 0.92 }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "home": {
+    "hero": {
+      "tag": "Trusted Export Partner",
+      "title": "Clean, Modern, and Built for Global Buyers",
+      "lede": "We design, source, and produce premium garments with end-to-end compliance and transparent pricing."
+    },
+    "clients": { "title": "Trusted by Global Brands" },
+    "testimonials": { "title": "What buyers say" }
+  },
+  "cta": {
+    "findImporters": "Find Importers",
+    "designBrand": "Design Your Brand",
+    "getQuote": "Get a Quote"
+  },
+  "stats": {
+    "monthly": "Monthly Units",
+    "lines": "Production Lines",
+    "otp": "On-time Delivery",
+    "markets": "Export Markets"
+  }
+}

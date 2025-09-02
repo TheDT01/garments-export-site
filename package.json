@@ -1,0 +1,34 @@
+{
+  "name": "sapphire-knitwear-site",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "prepare": "husky install",
+    "analyze": "NODE_OPTIONS='--inspect' next build",
+    "test:a11y": "echo \"Run axe audits in browser or use @axe-core/playwright as needed\"",
+    "report:lighthouse": "echo \"Run 'npx @lhci/cli autorun' after deploy to populate /reports\""
+  },
+  "dependencies": {
+    "classnames": "2.5.1",
+    "formidable": "^3.5.4",
+    "framer-motion": "^12.23.12",
+    "lucide-react": "^0.542.0",
+    "next": "14.2.5",
+    "nodemailer": "^7.0.5",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "tailwindcss": "3.4.10"
+  },
+  "devDependencies": {
+    "autoprefixer": "10.4.20",
+    "eslint": "8.57.0",
+    "eslint-config-next": "14.2.5",
+    "husky": "9.1.6",
+    "postcss": "8.4.45"
+  }
+}

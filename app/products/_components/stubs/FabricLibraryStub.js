@@ -1,0 +1,1 @@
+export default function FabricLibrary(){return <div className='p-6 border rounded-xl bg-gray-50'>[Fabric Library Stub]</div>}

@@ -3,5 +3,5 @@
   "/about/page": "app/about/page.js",
   "/privacy/page": "app/privacy/page.js",
   "/contact/page": "app/contact/page.js",
-  "/rfq/page": "app/rfq/page.js"
+  "/page": "app/page.js"
 }

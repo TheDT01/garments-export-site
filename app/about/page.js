@@ -216,12 +216,12 @@ export default function Page() {
 
         <div className="mt-8 grid grid-cols-3 sm:grid-cols-6 gap-4 items-center">
           {[
-            "client-1.png",
-            "client-2.png",
-            "client-3.png",
-            "client-4.png",
-            "client-5.png",
-            "client-6.png",
+            "guess.jpeg",
+            "H&M.jpeg",
+            "jcpenney.jpeg",
+            "newyorker.jpeg",
+            "tommy.jpeg",
+            "walmart.jpeg",
           ].map((c, i) => (
             <div
               key={i}

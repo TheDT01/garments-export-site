@@ -14,7 +14,7 @@ export default function Home() {
       <section className="relative w-full h-[70vh] overflow-hidden">
         <div className="absolute inset-0 animate-fade">
           <Image
-            src="/images/hero1.jpg"
+            src="/images/gallery/hero_image1.jpeg"
             alt="Factory Overview"
             fill
             className="object-cover"

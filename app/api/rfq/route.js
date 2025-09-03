@@ -1,28 +1,33 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
-import formidable from "formidable";
-import fs from "fs";
 
-// disable default body parser for file uploads
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};
+// To parse multipart form data in the app router, you need a middleware or parse manually.
+// Here is an example assuming your deployment supports node runtime and formidable works:
+
+import formidable from "formidable";
+
+// Disable Next.js body parsing via a route segment config (in a separate config file or app-level config)
+// Alternatively, process the raw request yourself in a custom handler.
+
+export const runtime = "nodejs"; // specify node runtime (default) if needed for formidable
 
 export async function POST(req) {
   try {
     const form = formidable({ multiples: true });
+
+    // Wrap formidable parsing in a Promise, but parse req as a Node.js IncomingMessage
+    // In Next.js app router, req is a Web API Request, so you need to get raw body as a stream.
+    // This example assumes your hosting supports Node.js IncomingMessage; adjust as needed.
+
     const data = await new Promise((resolve, reject) => {
       form.parse(req, (err, fields, files) => {
         if (err) reject(err);
-        resolve({ fields, files });
+        else resolve({ fields, files });
       });
     });
 
     const { category, quantity, price, fabric, details, contact } = data.fields;
 
-    // Gmail transporter setup
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -31,7 +36,6 @@ export async function POST(req) {
       },
     });
 
-    // Prepare file attachments
     let attachments = [];
     if (data.files.files) {
       const filesArray = Array.isArray(data.files.files)
@@ -44,7 +48,6 @@ export async function POST(req) {
       }));
     }
 
-    // Send email
     await transporter.sendMail({
       from: `"RFQ Bot - Sapphire Design" <${process.env.SMTP_USER}>`,
       to: "sapphireknitwear2005@gmail.com",

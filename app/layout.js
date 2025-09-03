@@ -23,7 +23,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-white text-gray-900">
+      <body className="min-h-screen bg-gradient-to-br from-blue-50 via-blue-200 to-indigo-400 text-gray-900">
         <Header />
         <main id="main" className="container py-10">
           {/* ✅ Wrap content in page transition */}

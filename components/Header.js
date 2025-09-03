@@ -24,8 +24,7 @@ export default function Header() {
           <Link href="/">Home</Link>
           <Link href="/about">About</Link>
           <Link href="/products">Products</Link>
-          <Link href="/capabilities">Capabilities</Link>
-          <Link href="/certifications">Certifications</Link>
+
           <Link href="/rfq" className="font-semibold">
             RFQ
           </Link>

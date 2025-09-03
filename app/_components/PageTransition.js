@@ -1,39 +1,51 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function PageTransition({ children }) {
   const pathname = usePathname();
-  const [isVisible, setIsVisible] = useState(true);
+  const [isTransitioning, setIsTransitioning] = useState(true);
+  const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
-    setIsVisible(true);
-    const timer = setTimeout(() => setIsVisible(false), 900); // shorter
+    setIsTransitioning(true);
+    setShowContent(false);
+
+    // Lock timing so animation always completes
+    const timer = setTimeout(() => {
+      setIsTransitioning(false);
+      setShowContent(true);
+    }, 200); // ~1.2s duration
+
     return () => clearTimeout(timer);
   }, [pathname]);
 
   return (
     <>
       <AnimatePresence mode="wait">
-        {isVisible && (
+        {isTransitioning && (
           <motion.div
             key={pathname}
             initial={{ opacity: 1 }}
             animate={{ opacity: 0 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.9, ease: "easeOut" }}
+            transition={{ duration: 1.2, ease: [0.83, 0, 0.17, 1] }} // smoother + slower
             className="fixed inset-0 z-50 flex items-center justify-center 
-                       bg-gradient-to-br from-blue-900 via-blue-950 to-black"
+                       bg-gradient-to-br from-blue-950 via-blue-900 to-black"
           >
+            {/* Frosted glass overlay */}
+            <div className="absolute inset-0 bg-black/40 backdrop-blur-2xl" />
+
             {/* Brand text */}
             <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 1.05, opacity: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              className="text-3xl md:text-5xl font-extrabold text-white tracking-wide drop-shadow-lg text-center px-4"
+              initial={{ y: 40, opacity: 0, filter: "blur(12px)" }}
+              animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+              exit={{ opacity: 0, y: -30 }}
+              transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
+              className="relative text-5xl md:text-6xl font-bold tracking-wide 
+                         text-white drop-shadow-[0_0_15px_rgba(59,130,246,0.8)]"
             >
               Sapphire Design LTD
             </motion.div>
@@ -41,15 +53,17 @@ export default function PageTransition({ children }) {
         )}
       </AnimatePresence>
 
-      {/* Page content */}
-      <motion.div
-        key={`${pathname}-content`}
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
-      >
-        {children}
-      </motion.div>
+      {/* Page content appears gracefully after */}
+      {showContent && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="relative z-0"
+        >
+          {children}
+        </motion.div>
+      )}
     </>
   );
 }

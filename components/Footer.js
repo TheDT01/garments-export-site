@@ -25,20 +25,6 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          <div>
-            <p className="font-semibold text-gray-900">Legal</p>
-            <ul className="list-disc ml-5">
-              <li>
-                <a href="/privacy">Privacy</a>
-              </li>
-              <li>
-                <a href="/cookies">Cookies</a>
-              </li>
-              <li>
-                <a href="/terms">Terms</a>
-              </li>
-            </ul>
-          </div>
         </div>
         <p className="mt-8">
           © {new Date().getFullYear()} Sapphire Design LTD. All rights reserved.

@@ -2,6 +2,7 @@ import "./../styles/globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import CookieBanner from "../components/CookieBanner";
+import PageTransition from "../app/_components/PageTransition"; // ✅ new import
 
 export const metadata = {
   title: "Sapphire Design LTD — OEM Garment Manufacturer, Bangladesh",
@@ -25,7 +26,8 @@ export default function RootLayout({ children }) {
       <body className="bg-white text-gray-900">
         <Header />
         <main id="main" className="container py-10">
-          {children}
+          {/* ✅ Wrap content in page transition */}
+          <PageTransition>{children}</PageTransition>
         </main>
         <Footer />
         <CookieBanner />

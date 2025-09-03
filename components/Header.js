@@ -119,7 +119,7 @@ export default function Header() {
               })}
               <li className="pt-2 border-t">
                 <a
-                  href="https://wa.me/"
+                  href="https://wa.me/01315849244"
                   aria-label="WhatsApp"
                   className="block rounded-md border border-gray-300 bg-white/70 px-4 py-2 text-sm font-medium shadow-sm transition hover:border-blue-500 hover:text-blue-600 hover:shadow-md"
                 >

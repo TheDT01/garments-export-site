@@ -9,11 +9,7 @@ import CategoryHub from "./_components/CategoryHub";
 import FactoryTour from "./_components/FactoryTour";
 
 // Import heavy feature stubs (replace later with real ones if needed)
-import RFQForm from "./_components/stubs/RFQFormStub";
-import EstimatorPro from "./_components/stubs/EstimatorProStub";
-import FabricLibrary from "./_components/stubs/FabricLibraryStub";
 import ComplianceWall from "./_components/stubs/ComplianceWallStub";
-import SampleWizard from "./_components/stubs/SampleWizardStub";
 
 export default function Page() {
   return (
@@ -33,9 +29,6 @@ export default function Page() {
           <div className="mt-6 flex flex-wrap gap-3 justify-center md:justify-start">
             <a href="#categories" className="btn">
               Explore Categories
-            </a>
-            <a href="#rfq" className="btn-secondary">
-              Start an RFQ
             </a>
           </div>
         </div>
@@ -57,40 +50,6 @@ export default function Page() {
         <FactoryTour videoId="dQw4w9WgXcQ" />
       </div>
 
-      {/* RFQ */}
-      <div id="rfq" className="space-y-4">
-        <h2 className="text-2xl md:text-3xl font-bold">RFQ Configurator</h2>
-        <p className="text-gray-600">
-          Share your requirements — fabric, GSM, trims, quantities, delivery —
-          and we’ll revert with a costed offer.
-        </p>
-        <RFQForm />
-      </div>
-
-      {/* Estimator */}
-      <div className="space-y-4">
-        <h2 className="text-2xl md:text-3xl font-bold">
-          MOQ & Lead-Time Estimator
-        </h2>
-        <p className="text-gray-600">
-          Indicative MOQ and schedule based on style complexity, fabric
-          readiness and testing scope.
-        </p>
-        <EstimatorPro />
-      </div>
-
-      {/* Fabric Library */}
-      <div className="space-y-4">
-        <h2 className="text-2xl md:text-3xl font-bold">
-          Fabric & Trim Library
-        </h2>
-        <p className="text-gray-600">
-          Search fabrics, trims, finishes. Filter by composition, GSM, finish
-          and end-use.
-        </p>
-        <FabricLibrary />
-      </div>
-
       {/* Compliance Wall */}
       <div className="space-y-4">
         <h2 className="text-2xl md:text-3xl font-bold">
@@ -101,18 +60,6 @@ export default function Page() {
           FEM/FSLM, ZDHC.
         </p>
         <ComplianceWall />
-      </div>
-
-      {/* Sample Wizard */}
-      <div className="space-y-4">
-        <h2 className="text-2xl md:text-3xl font-bold">
-          Sample Request Wizard
-        </h2>
-        <p className="text-gray-600">
-          Request development, fit or PP samples with courier options and tech
-          notes.
-        </p>
-        <SampleWizard />
       </div>
     </section>
   );

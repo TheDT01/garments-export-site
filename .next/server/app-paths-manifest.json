@@ -1,8 +1,4 @@
 {
-  "/products/knitwear/page": "app/products/knitwear/page.js",
-  "/estimator/page": "app/estimator/page.js",
-  "/library/page": "app/library/page.js",
-  "/gallery/page": "app/gallery/page.js",
-  "/contact/page": "app/contact/page.js",
-  "/page": "app/page.js"
+  "/products/page": "app/products/page.js",
+  "/api/send-sample/route": "app/api/send-sample/route.js"
 }

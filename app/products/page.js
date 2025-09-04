@@ -7,6 +7,7 @@ export const metadata = {
 
 import CategoryHub from "./_components/CategoryHub";
 import FactoryTour from "./_components/FactoryTour";
+import SampleWizard from "./_components/stubs/SampleWizard";
 
 // Import heavy feature stubs (replace later with real ones if needed)
 import ComplianceWall from "./_components/stubs/ComplianceWallStub";
@@ -48,6 +49,18 @@ export default function Page() {
           and compliance facilities.
         </p>
         <FactoryTour videoId="dQw4w9WgXcQ" />
+      </div>
+
+      {/* Sample Wizard */}
+      <div className="space-y-4">
+        <h2 className="text-2xl md:text-3xl font-bold">
+          Sample Request Wizard
+        </h2>
+        <p className="text-gray-600">
+          Request development, fit or PP samples with courier options and tech
+          notes.
+        </p>
+        <SampleWizard />
       </div>
 
       {/* Compliance Wall */}
